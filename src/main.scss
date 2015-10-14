@@ -3,21 +3,42 @@
 
 .sideBar{
 	float: left;
-	width: 30%;
+	width: 11%;
+	margin-left: 4%;
+
 }
 
 .mainContentArea {
 	float: right;
-	width: 65%;
+	width: 80%;
 	margin-right: 5%;
 	.header{
 		overflow: hidden;
+		border-bottom: 1px solid black;
 		.logo{
 			float: left;
 		}
 		.socialMedia{
 			float: right;
 		}
+	}
+	.mainImage{
+		margin-top: 10px;
+	}
+
+	.updates div{
+		display: inline-block;
+		width: 30%;
+	}
+
+	.content{
+		float: left;
+		width: 70%;
+	}
+
+	.foodPhotos{
+		float: right;
+		width: 25%;
 	}
 }
 

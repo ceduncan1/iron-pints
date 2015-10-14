@@ -1,14 +1,27 @@
 .sideBar {
   float: left;
-  width: 30%; }
+  width: 11%;
+  margin-left: 4%; }
 
 .mainContentArea {
   float: right;
-  width: 65%;
+  width: 80%;
   margin-right: 5%; }
   .mainContentArea .header {
-    overflow: hidden; }
+    overflow: hidden;
+    border-bottom: 1px solid black; }
     .mainContentArea .header .logo {
       float: left; }
     .mainContentArea .header .socialMedia {
       float: right; }
+  .mainContentArea .mainImage {
+    margin-top: 10px; }
+  .mainContentArea .updates div {
+    display: inline-block;
+    width: 30%; }
+  .mainContentArea .content {
+    float: left;
+    width: 70%; }
+  .mainContentArea .foodPhotos {
+    float: right;
+    width: 25%; }
