@@ -1,17 +1,9 @@
 .container{
 }
 
-.sideBar{
-	float: left;
-	width: 11%;
-	margin-left: 4%;
-
-}
-
 .mainContentArea {
-	float: right;
-	width: 80%;
-	margin-right: 5%;
+	margin: 2%;
+
 	.header{
 		overflow: hidden;
 		border-bottom: 1px solid black;
