@@ -1,0 +1,14 @@
+.sideBar {
+  float: left;
+  width: 30%; }
+
+.mainContentArea {
+  float: right;
+  width: 65%;
+  margin-right: 5%; }
+  .mainContentArea .header {
+    overflow: hidden; }
+    .mainContentArea .header .logo {
+      float: left; }
+    .mainContentArea .header .socialMedia {
+      float: right; }
