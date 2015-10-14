@@ -11,10 +11,10 @@
   // Templates
   let newsTemplate = function (obj) {
     let template = `
-    <h3>Latest News</h3>
+    <p>Latest News</p>
     <div>
-      <div class='title'>${ obj.title }</div>
-      <div class='date'>${ obj.date_published }</div>
+      <p class='title'>${ obj.title }</p>
+      <p class='date'>${ obj.date_published }</p>
     </div>
     <p>${ obj.post }</p>`;
     return template;
