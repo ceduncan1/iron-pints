@@ -1,0 +1,23 @@
+.container{
+}
+
+.sideBar{
+	float: left;
+	width: 30%;
+}
+
+.mainContentArea {
+	float: right;
+	width: 65%;
+	margin-right: 5%;
+	.header{
+		overflow: hidden;
+		.logo{
+			float: left;
+		}
+		.socialMedia{
+			float: right;
+		}
+	}
+}
+
