@@ -33,4 +33,42 @@
 		width: 25%;
 	}
 }
+//Google Map
+.map h3{
+	padding-left: 32px;
+}
+.google{
+	position: relative;
+  top: 3px;
+  left: 13px;
+}
+.map{
+	border: 1px solid gray;
+}
+.map p{
+	position: relative;
+	left: 51px;
+}
 
+.map ul{
+	position: relative;
+	font-size: .7em;
+	list-style: none;
+	top: -3px;
+	left: 4px;
+	word-spacing: 7px;
+}
+
+.map li{
+	display: inline;
+	text-decoration: none;
+}
+.map li a{
+	text-decoration: none;
+	color: red;
+}
+
+.map hr {
+  color: #E1E3DF;
+  width: 92%;
+   }
