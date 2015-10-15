@@ -56,11 +56,9 @@ $('.resTab').on('click', function() {
     <p>${ obj.post }</p>
     </div>`;
     return nTemplate;
-  
   };
 
   let doNews = function(newsItem) {
-    // console.log(arr);
     $('.latestNews').append(newsTemplate(newsItem));
   };
 
@@ -70,12 +68,10 @@ $('.resTab').on('click', function() {
 
 let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 
-let menuPromise = $.getJSON(menuUrl);
-  menuPromise.then( function (response) {
+let specialPromise = $.getJSON(menuUrl);  
+  specialPromise.then(function (response){
     doSpecial(response);
-    doMenu(response);
   });
-
 
   let todaysSpecial = function (obj) {
     let sTemplate = `
@@ -85,40 +81,33 @@ let menuPromise = $.getJSON(menuUrl);
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
     return sTemplate;
-    console.log(sTemplate);
   };
 
   let doSpecial = function(specials) {
     $('.special').append(todaysSpecial(specials.entrees[0]));
   };
   
-  let menuTemplate = function (arr) {
-    // console.log(arr);
-    _.each(arr, function(item){
-      let mTemplate = `
-        <div class='wholeItem'
-          <h3>${ item }</h3>
-          <div class='mItemTop'>
-            <span class='itemTitle'>${ item.item }</span>
-            <span class='itemPrice'>${ item.price }</span>
-          </div>
-          <div class='mItemBottom'>
-            <span class='itemDesc'>${ item.description }</span>
-            <span class='icons'>
-              <div class='allergy'></div>
-              <div class='fav'></div>
-              <div class='spicy'></div>
-              <div class='veg'></div>
-            </span>
-          </div>
-        </div>`
-      return mTemplate;
-    });
+//---------------------------------------------------------------/
+
+let menuPromise = $.getJSON(menuUrl);
+  menuPromise.then(function (response){
+    doMenu(response);
+  });
+
+  let theMenu = function(obj) {
+    _.each(obj, function(moreObjs){
+      _.each(moreObjs, function(x){
+        console.log(x.items)
+      })
+    })
+    let mTemplate = `
+    <p>${ obj.item }</p>`;
+    return mTemplate;
   };
 
-  let doMenu = function(obj) {
-    $('.menu').append(menuTemplate(obj));
-  };
+  let doMenu = function(menuItems){
+    $('.menu').append(theMenu(menuItems.entrees));
+  }
 
 
 
