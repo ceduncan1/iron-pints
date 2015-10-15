@@ -75,10 +75,14 @@ let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 let menuPromise = $.getJSON(menuUrl);
   menuPromise.then( function (response) {
     doSpecial(response);
+  });
+  menuPromise.then( function (response) {
     doMenu(response);
   });
 
 
+
+// not able to console.log(sTemplate) or (todaysSpecial()) ?
   let todaysSpecial = function (obj) {
     let sTemplate = `
     <p>Todays Special</p>
@@ -87,25 +91,24 @@ let menuPromise = $.getJSON(menuUrl);
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
     return sTemplate;
-    console.log(sTemplate);
   };
 
   let doSpecial = function(specials) {
     $('.special').append(todaysSpecial(specials.entrees[0]));
   };
-  
-  let menuTemplate = function (arr) {
-    // console.log(arr);
-    _.each(arr, function(item){
-      let mTemplate = `
-        <div class='wholeItem'
-          <h3>${ item }</h3>
+ 
+
+  let menuTemplateApps = function (obj) {
+    let retA = '';
+    _.each(obj.appetizers, function(foodObj){
+      retA += `
+        <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ item.item }</span>
-            <span class='itemPrice'>${ item.price }</span>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
-            <span class='itemDesc'>${ item.description }</span>
+            <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
               <div class='allergy'></div>
               <div class='fav'></div>
@@ -113,20 +116,75 @@ let menuPromise = $.getJSON(menuUrl);
               <div class='veg'></div>
             </span>
           </div>
-        </div>`
-      return mTemplate;
+        </div>`;
     });
+    return retA;
+  };
+
+    let menuTemplateEntr = function (obj) {
+    let retE = '';
+    _.each(obj.entrees, function(foodObj){
+      retE += `
+        <div class='wholeItem'>
+          <div class='mItemTop'>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
+          </div>
+          <div class='mItemBottom'>
+            <span class='itemDesc'>${ foodObj.description }</span>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
+          </div>
+        </div>`;
+    });
+    return retE;
   };
 
 
+<<<<<<< HEAD
   let doMenu = function(obj) {
     $('.menu').append(menuTemplate(obj));
+=======
+    let menuTemplateSide = function (obj) {
+    let retS = '';
+    _.each(obj.sides, function(foodObj){
+      retS += `
+        <div class='wholeItem'>
+          <div class='mItemTop'>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
+          </div>
+          <div class='mItemBottom'>
+            <span class='itemDesc'>${ foodObj.description }</span>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
+          </div>
+        </div>`;
+    });
+    return retS;
+>>>>>>> 1c822c3326b9e9cfaade4ca60f0e59aa8ab61dee
   };
 
 
 
+  let doMenu = function(objOfArrays) {
+    $('.appContent').append(menuTemplateApps(objOfArrays));
+    $('.entrContent').append(menuTemplateEntr(objOfArrays));
+    $('.sideContent').append(menuTemplateSide(objOfArrays));
+  };
+
+
+
+<<<<<<< HEAD
+
+=======
 }());
-
-
-
-
+>>>>>>> 1c822c3326b9e9cfaade4ca60f0e59aa8ab61dee
