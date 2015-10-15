@@ -127,8 +127,6 @@
     });
   });
 
-  //Menu Templates -------------------------------------------------------------
-
   //Todays special
   $('document').ready(function () {
 
@@ -146,6 +144,8 @@
       });
     });
   });
+
+  //Menu Templates -------------------------------------------------------------
 
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';

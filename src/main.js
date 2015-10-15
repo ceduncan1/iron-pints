@@ -152,7 +152,6 @@ $('.resTab').on('click', function() {
   });
  
 
-//Menu Templates -------------------------------------------------------------
 
 //Todays special
  $('document').ready(function(){
@@ -173,6 +172,7 @@ $('.resTab').on('click', function() {
     });
   });
 
+//Menu Templates -------------------------------------------------------------
 
   let menuTemplateApps = function (obj) {
     let retA = '';
