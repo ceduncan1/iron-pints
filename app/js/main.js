@@ -51,7 +51,6 @@
   };
 
   var doNews = function doNews(newsItem) {
-    // console.log(arr);
     $('.latestNews').append(newsTemplate(newsItem));
   };
 
@@ -59,12 +58,15 @@
 
   var menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 
-  var menuPromise = $.getJSON(menuUrl);
-  menuPromise.then(function (response) {
+  var specialPromise = $.getJSON(menuUrl);
+  specialPromise.then(function (response) {
     doSpecial(response);
+<<<<<<< HEAD
   });
   menuPromise.then(function (response) {
     doMenu(response);
+=======
+>>>>>>> master
   });
 
   // not able to console.log(sTemplate) or (todaysSpecial()) ?
@@ -77,6 +79,7 @@
     $('.special').append(todaysSpecial(specials.entrees[0]));
   };
 
+<<<<<<< HEAD
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';
     _.each(obj.appetizers, function (foodObj) {
@@ -113,6 +116,27 @@
     $('.sideContent').append(menuTemplateSide(objOfArrays));
 
     // console.log(objOfArrays);
+=======
+  //---------------------------------------------------------------/
+
+  var menuPromise = $.getJSON(menuUrl);
+  menuPromise.then(function (response) {
+    doMenu(response);
+  });
+
+  var theMenu = function theMenu(obj) {
+    _.each(obj, function (moreObjs) {
+      _.each(moreObjs, function (x) {
+        console.log(x.items);
+      });
+    });
+    var mTemplate = '\n    <p>' + obj.item + '</p>';
+    return mTemplate;
+  };
+
+  var doMenu = function doMenu(menuItems) {
+    $('.menu').append(theMenu(menuItems.entrees));
+>>>>>>> master
   };
 })();
 

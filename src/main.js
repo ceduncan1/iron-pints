@@ -56,11 +56,9 @@ $('.resTab').on('click', function() {
     <p>${ obj.post }</p>
     </div>`;
     return nTemplate;
-  
   };
 
   let doNews = function(newsItem) {
-    // console.log(arr);
     $('.latestNews').append(newsTemplate(newsItem));
   };
 
@@ -70,8 +68,8 @@ $('.resTab').on('click', function() {
 
 let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 
-let menuPromise = $.getJSON(menuUrl);
-  menuPromise.then( function (response) {
+let specialPromise = $.getJSON(menuUrl);  
+  specialPromise.then(function (response){
     doSpecial(response);
   });
   menuPromise.then( function (response) {
@@ -81,6 +79,7 @@ let menuPromise = $.getJSON(menuUrl);
 
 
 // not able to console.log(sTemplate) or (todaysSpecial()) ?
+
   let todaysSpecial = function (obj) {
     let sTemplate = `
     <p>Todays Special</p>
@@ -180,7 +179,12 @@ let menuPromise = $.getJSON(menuUrl);
     $('.sideContent').append(menuTemplateSide(objOfArrays));
 
     // console.log(objOfArrays);
+
   };
+
+  let doMenu = function(menuItems){
+    $('.menu').append(theMenu(menuItems.entrees));
+  }
 
 
 
