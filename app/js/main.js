@@ -12,7 +12,7 @@
 
   // Templates
   var newsTemplate = function newsTemplate(obj) {
-    var template = '\n    <p>Latest News</p>\n    <div>\n      <p class=\'title\'>' + obj.title + '</p>\n      <p class=\'date\'>' + obj.date_published + '</p>\n    </div>\n    <p>' + obj.post + '</p>';
+    var template = '\n    <p>Latest News</p>\n    <div>\n      <p class=\'title\'>' + obj.title + '</p>\n      <p class=\'date\'>' + obj.date_published + '</p>\n    <p>' + obj.post + '</p>\n    </div>';
     return template;
   };
 
@@ -29,7 +29,7 @@
   });
 
   var todaysSpecial = function todaysSpecial(obj) {
-    var template = '\n    <p>Todays Special</p>\n    <img src="https://www.placecage.com/200/300">\n    <p>' + obj.item + '</p>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
+    var template = '\n    <p>Todays Special</p>\n    <img src="">\n    <p>' + obj.item + '</p>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
     return template;
     console.log(template);
   };
