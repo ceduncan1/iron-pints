@@ -1,3 +1,4 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
 .container {
   font-size: 62.5%;
   background-color: #FFFFFF; }
@@ -79,7 +80,8 @@ p.first {
 .borderFix {
   border-top: 1px solid black;
   border-right: 1px solid black;
-  border-left: 1px solid black; }
+  border-left: 1px solid black;
+  border-bottom: 1px solid white; }
 
 .foodPhotos {
   float: right;
