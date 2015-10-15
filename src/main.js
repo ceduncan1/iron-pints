@@ -56,9 +56,11 @@ $('.resTab').on('click', function() {
     <p>${ obj.post }</p>
     </div>`;
     return nTemplate;
+  
   };
 
   let doNews = function(newsItem) {
+    // console.log(arr);
     $('.latestNews').append(newsTemplate(newsItem));
   };
 
@@ -68,8 +70,8 @@ $('.resTab').on('click', function() {
 
 let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 
-let specialPromise = $.getJSON(menuUrl);  
-  specialPromise.then(function (response){
+let menuPromise = $.getJSON(menuUrl);
+  menuPromise.then( function (response) {
     doSpecial(response);
   });
   menuPromise.then( function (response) {
@@ -79,7 +81,6 @@ let specialPromise = $.getJSON(menuUrl);
 
 
 // not able to console.log(sTemplate) or (todaysSpecial()) ?
-
   let todaysSpecial = function (obj) {
     let sTemplate = `
     <p>Todays Special</p>
@@ -115,8 +116,6 @@ let specialPromise = $.getJSON(menuUrl);
           </div>
         </div>`;
     });
-    // console.log(appTemplate);
-    // return appTemplate;
     return retA;
   };
 
@@ -140,8 +139,6 @@ let specialPromise = $.getJSON(menuUrl);
           </div>
         </div>`;
     });
-    // console.log(appTemplate);
-    // return appTemplate;
     return retE;
   };
 
@@ -166,8 +163,6 @@ let specialPromise = $.getJSON(menuUrl);
           </div>
         </div>`;
     });
-    // console.log(appTemplate);
-    // return appTemplate;
     return retS;
   };
 
@@ -177,62 +172,8 @@ let specialPromise = $.getJSON(menuUrl);
     $('.appContent').append(menuTemplateApps(objOfArrays));
     $('.entrContent').append(menuTemplateEntr(objOfArrays));
     $('.sideContent').append(menuTemplateSide(objOfArrays));
-
-    // console.log(objOfArrays);
-
   };
-
-  let doMenu = function(menuItems){
-    $('.menu').append(theMenu(menuItems.entrees));
-  }
 
 
 
 }());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // console.log(buuhhh);
-      // return buuhhh;
-      // console.log(foodObjs);
-      // return foodObjs;
-
-
-      // let mTemplate = `
-      //   <div class='wholeItem'>
-      //     <h3>${ foodTypes }</h3>
-      //     <div class='mItemTop'>
-      //       <span class='itemTitle'>${ foodTypes.item }</span>
-      //       <span class='itemPrice'>${ foodTypes.price }</span>
-      //     </div>
-      //     <div class='mItemBottom'>
-      //       <span class='itemDesc'>${ foodTypes.description }</span>
-      //       <span class='icons'>
-      //         <div class='allergy'></div>
-      //         <div class='fav'></div>
-      //         <div class='spicy'></div>
-      //         <div class='veg'></div>
-      //       </span>
-      //     </div>
-      //   </div>`;
-      // return mTemplate;
-    // console.log(mTemplate);
-
-
-
