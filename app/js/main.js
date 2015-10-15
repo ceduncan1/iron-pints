@@ -68,7 +68,7 @@
   });
 
   var todaysSpecial = function todaysSpecial(obj) {
-    var sTemplate = '\n    <h2>Todays Special</h2>\n    <hr>\n    <img src="">\n    <h3>' + obj.item + '</h3>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
+    var sTemplate = '\n\n    <h2>Todays Special</h2>\n    <hr>\n    <p>Todays Special</p>\n    <div id="photo"></div>\n    <h3>' + obj.item + '</h3>\n\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
     return sTemplate;
   };
 
@@ -128,6 +128,24 @@
   });
 
   //Menu Templates -------------------------------------------------------------
+
+  //Todays special
+  $('document').ready(function () {
+
+    var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    $.getJSON(foodUrl, {
+      tags: ' pork steak',
+      tagmode: 'all',
+      format: 'json'
+    }, function (data) {
+      console.log(data);
+      $.each(data.items, function (i, item) {
+        $('<img/>').attr("src", item.media.m).appendTo('#photo');
+        if (i === 0) return false;
+      });
+    });
+  });
 
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';
