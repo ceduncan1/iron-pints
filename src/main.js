@@ -11,21 +11,47 @@
   // Templates
   let newsTemplate = function (obj) {
     let template = `
-    <h3>Latest News</h3>
+    <p>Latest News</p>
     <div>
-      <div class='title'>${ obj.title }</div>
-      <div class='date'>${ obj.date_published }</div>
+      <p class='title'>${ obj.title }</p>
+      <p class='date'>${ obj.date_published }</p>
     </div>
     <p>${ obj.post }</p>`;
     return template;
-    console.log(newsTemplate)
+  
   };
 
   let doSomething = function(newsItem) {
     // console.log(arr);
-    console.log(newsTemplate);
     $('.latestNews').append(newsTemplate(newsItem));
   };
+
+
+
+let specialUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
+
+let specialPromise = $.getJSON(specialUrl);
+  specialPromise.then( function (response) {
+    doSomethingElse(response);
+  });
+
+
+  let todaysSpecial = function (obj) {
+    let template = `
+    <p>Todays Special</p>
+    <img src="https://www.placecage.com/200/300">
+    <p>${ obj.item }</p>
+    <p>${ obj.description }</p>
+    <p>${ obj.price }</p>`;
+    return template;
+    console.log(template);
+  }
+
+  let doSomethingElse = function(specials) {
+    $('.special').append(todaysSpecial(specials.entrees[0]));
+
+  };
+  
 
 
 // console.log(doSomething);
