@@ -1,7 +1,6 @@
 @import url(http://weloveiconfonts.com/api/?family=brandico);
 .container {
   font-size: 62.5%;
-  background-color: #FFFFFF;
   margin: 3%; }
 
 .header {
@@ -21,11 +20,14 @@
   border: 1px solid #E0E0E0;
   background-color: #F3F3F3; }
   .socialMedia p {
-    padding: 0em 1em 1em 3em;
+    padding: 0em 1em 1em 1em;
     margin: 0;
     font-size: 1.6em; }
   .socialMedia a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: black; }
+  .socialMedia i {
+    margin-right: 2em; }
 
 p.first {
   margin-top: 1em; }
@@ -142,7 +144,8 @@ p.first {
     padding-top: 0px; }
   .reservations select {
     font-size: 2em;
-    width: 100px; }
+    width: 100px;
+    text-decoration: none; }
   .reservations button {
     margin-top: 2em;
     width: 150px;
