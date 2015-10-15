@@ -15,16 +15,16 @@
   // Templates
   let newsTemplate = function (obj) {
     let template = `
-    <h2>Latest News</h2>
-    <hr size1>
+    <p>Latest News</p>
     <div>
-      <h3 class='title'>${ obj.title }</h3>
+      <p class='title'>${ obj.title }</p>
       <p class='date'>${ obj.date_published }</p>
     <p>${ obj.post }</p>
     </div>`;
     return template;
   
   };
+
 
   let doSomething = function(newsItem) {
     // console.log(arr);
@@ -92,13 +92,6 @@ $('.resTab').on('click', function() {
   $('.menuTab').removeClass('borderFix');
 
 });
-
-
-
-
-
-
-
 
 
 
