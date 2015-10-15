@@ -1,23 +1,67 @@
 .container {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: #FFFFFF; }
 
 .mainContentArea {
   margin: 3%; }
-  .mainContentArea .header {
-    overflow: hidden;
-    border-bottom: 1px solid black; }
-    .mainContentArea .header .logo {
-      float: left; }
-    .mainContentArea .header .socialMedia {
-      float: right; }
-  .mainContentArea .mainImage {
-    margin-top: 10px; }
-  .mainContentArea .updates div {
-    display: inline-block;
-    width: 30%; }
-  .mainContentArea .content {
-    float: left;
-    width: 70%; }
-  .mainContentArea .foodPhotos {
-    float: right;
-    width: 25%; }
+
+.header {
+  overflow: hidden;
+  border-bottom: 1px solid #BBBBBB; }
+
+.logo {
+  float: left;
+  font-size: 2em;
+  font-style: italic; }
+  .logo img {
+    width: 50%;
+    height: 100px; }
+
+.socialMedia {
+  float: right;
+  border: 1px solid #E0E0E0;
+  background-color: #F3F3F3; }
+  .socialMedia p {
+    padding: 0em 1em 1em 3em;
+    margin: 0;
+    font-size: 1.6em; }
+  .socialMedia a {
+    text-decoration: none; }
+
+p.first {
+  margin-top: 1em; }
+
+.mainImage {
+  margin-top: 20px; }
+  .mainImage img {
+    width: 100%;
+    height: 250px; }
+
+.updates {
+  max-width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+.tile {
+  width: 30%;
+  height: 300px;
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: top;
+  margin-right: 15px;
+  margin-left: 9px;
+  padding: 1em; }
+
+.map {
+  margin-right: 0; }
+
+.latestNews {
+  margin-left: 0; }
+
+.content {
+  float: left;
+  width: 70%; }
+
+.foodPhotos {
+  float: right;
+  width: 25%; }

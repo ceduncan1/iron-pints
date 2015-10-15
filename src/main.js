@@ -15,8 +15,8 @@
     <div>
       <p class='title'>${ obj.title }</p>
       <p class='date'>${ obj.date_published }</p>
-    </div>
-    <p>${ obj.post }</p>`;
+    <p>${ obj.post }</p>
+    </div>`;
     return template;
   
   };
@@ -39,7 +39,7 @@ let specialPromise = $.getJSON(specialUrl);
   let todaysSpecial = function (obj) {
     let template = `
     <p>Todays Special</p>
-    <img src="https://www.placecage.com/200/300">
+    <img src="">
     <p>${ obj.item }</p>
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
