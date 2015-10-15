@@ -1,9 +1,9 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
 .container {
   font-size: 62.5%;
-  background-color: #FFFFFF; }
-
-.mainContentArea {
+  background-color: #FFFFFF;
   margin: 3%; }
+<<<<<<< HEAD
 
 .header {
   overflow: hidden;
@@ -83,6 +83,47 @@ hr {
   color: #E1E3DF;
   width: 92%; }
 
+=======
+
+.header {
+  overflow: hidden;
+  border-bottom: 1px solid #BBBBBB; }
+
+.logo {
+  float: left;
+  font-size: 2em;
+  font-style: italic; }
+  .logo img {
+    width: 50%;
+    height: 100px; }
+
+.socialMedia {
+  float: right;
+  border: 1px solid #E0E0E0;
+  background-color: #F3F3F3; }
+  .socialMedia p {
+    padding: 0em 1em 1em 3em;
+    margin: 0;
+    font-size: 1.6em; }
+  .socialMedia a {
+    text-decoration: none; }
+
+p.first {
+  margin-top: 1em; }
+
+.mainImage {
+  margin-top: 20px; }
+  .mainImage img {
+    width: 100%;
+    height: 250px; }
+
+.latestNews {
+  border: 1px solid gray;
+  margin-bottom: 59px;
+  font-size: 1.4em;
+  margin-right: 21px; }
+
+>>>>>>> master
 .updates {
   max-width: 100%;
   margin-top: 2em;
@@ -92,17 +133,54 @@ hr {
   width: 30%;
   height: 300px;
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid gray;
   vertical-align: top;
   margin-right: 15px;
   margin-left: 9px;
+<<<<<<< HEAD
   padding: 1em; }
 
 .map {
   margin-right: 0; }
+=======
+  padding: 1em;
+  font-size: 1em; }
+
+.special {
+  border: 1px solid gray; }
+>>>>>>> master
 
 .latestNews {
   margin-left: 0; }
+
+.map {
+  margin-right: 0;
+  border: 1px solid gray; }
+  .map h2 {
+    padding-left: 32px; }
+  .map hr {
+    color: #E1E3DF;
+    width: 92%; }
+  .map .google {
+    position: relative;
+    top: 3px;
+    left: 13px; }
+  .map h3 {
+    position: relative;
+    left: 70px; }
+  .map ul {
+    position: relative;
+    font-size: 1em;
+    list-style: none;
+    top: 1px;
+    word-spacing: 7px;
+    padding-bottom: 13px; }
+  .map li {
+    display: inline;
+    text-decoration: none; }
+    .map li a {
+      text-decoration: none;
+      color: red; }
 
 .content {
   float: left;
@@ -125,7 +203,8 @@ hr {
 .borderFix {
   border-top: 1px solid black;
   border-right: 1px solid black;
-  border-left: 1px solid black; }
+  border-left: 1px solid black;
+  border-bottom: 1px solid white; }
 
 .foodPhotos {
   float: right;
