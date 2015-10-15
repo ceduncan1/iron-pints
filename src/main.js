@@ -49,11 +49,11 @@ $('.resTab').on('click', function() {
   let newsTemplate = function (obj) {
     let nTemplate = `
     <h2>Latest News</h2>
-    <hr size1>
+    <hr>
     <div>
       <h3 class='title'>${ obj.title }</h3>
-      <p class='date'>${ obj.date_published }</p>
-    <p>${ obj.post }</p>
+      <h3 class='date'>${ obj.date_published }</h3>
+    <p class="text">${ obj.post }</p>
     </div>`;
     return nTemplate;
   
@@ -78,14 +78,12 @@ let menuPromise = $.getJSON(menuUrl);
     doMenu(response);
   });
 
-
-
-// not able to console.log(sTemplate) or (todaysSpecial()) ?
   let todaysSpecial = function (obj) {
     let sTemplate = `
-    <p>Todays Special</p>
+    <h2>Todays Special</h2>
+    <hr>
     <img src="">
-    <p>${ obj.item }</p>
+    <h3>${ obj.item }</h3>
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
     return sTemplate;
@@ -129,7 +127,7 @@ $('.resTab').on('click', function() {
 
 });
 
-//foodphotos
+//foodphotos ----------------------------------------------------------------
 
     $('document').ready(function(){
       
@@ -150,6 +148,7 @@ $('.resTab').on('click', function() {
     });
   });
  
+//Menu Templates -------------------------------------------------------------
 
   let menuTemplateApps = function (obj) {
     let retA = '';
@@ -157,7 +156,7 @@ $('.resTab').on('click', function() {
       retA += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' ....................................................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -168,6 +167,12 @@ $('.resTab').on('click', function() {
               <div class='spicy'></div>
               <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -180,7 +185,7 @@ $('.resTab').on('click', function() {
       retE += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' ...........................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -192,11 +197,16 @@ $('.resTab').on('click', function() {
               <div class='veg'></div>
             </span>
           </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
+          </div>
         </div>`;
     });
     return retE;
   };
-
 
     let menuTemplateSide = function (obj) {
     let retS = '';
@@ -204,7 +214,7 @@ $('.resTab').on('click', function() {
       retS += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' .................................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -216,12 +226,16 @@ $('.resTab').on('click', function() {
               <div class='veg'></div>
             </span>
           </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
+          </div>
         </div>`;
     });
     return retS;
   };
-
-
 
   let doMenu = function(objOfArrays) {
     $('.appContent').append(menuTemplateApps(objOfArrays));
