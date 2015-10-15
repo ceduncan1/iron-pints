@@ -3,7 +3,6 @@
 
 .container{
 	font-size: 62.5%;
-	background-color: #FFFFFF;
 	margin: 3%;
 }
 
@@ -28,12 +27,16 @@ border-bottom: 1px solid #BBBBBB;
 	border: 1px solid #E0E0E0;
 	background-color: #F3F3F3;
 	p{
-		padding: 0em 1em 1em 3em;
+		padding: 0em 1em 1em 1em;
 		margin: 0;
 		font-size: 1.6em;
 	}
 	a{
 		text-decoration: none;
+		color: black;
+	}
+	i{
+		margin-right: 2em;
 	}
 }
 
@@ -196,6 +199,7 @@ p.first{
 	select{
 		font-size: 2em;
 		width: 100px;
+		text-decoration: none;
 	}
 	button{
 		margin-top: 2em;
