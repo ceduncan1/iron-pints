@@ -47,17 +47,19 @@ $('.resTab').on('click', function() {
 
   // Templates
   let newsTemplate = function (obj) {
+
     let nTemplate = `
     <h2>Latest News</h2>
     <hr size1>
     <div>
-      <h3 class='title'>${ obj.title }</h3>
+      <p class='title'>${ obj.title }</p>
       <p class='date'>${ obj.date_published }</p>
     <p>${ obj.post }</p>
     </div>`;
     return nTemplate;
   
   };
+
 
   let doNews = function(newsItem) {
     // console.log(arr);
@@ -116,6 +118,7 @@ let menuPromise = $.getJSON(menuUrl);
     });
   };
 
+
   let doMenu = function(obj) {
     $('.menu').append(menuTemplate(obj));
   };
@@ -123,6 +126,7 @@ let menuPromise = $.getJSON(menuUrl);
 
 
 }());
+
 
 
 
