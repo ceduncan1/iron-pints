@@ -1,66 +1,55 @@
 .container{
 	font-size: 62.5%;
 	background-color: #FFFFFF;
-
 }
 
 .mainContentArea {
 	margin: 3%;
+}
+//***************************************Header**********************//
+.header{
+overflow: hidden;
+border-bottom: 1px solid #BBBBBB;
+}
 
-	.header{
-		overflow: hidden;
-		border-bottom: 1px solid #BBBBBB;
-		.logo{
-			float: left;
-			font-size: 2em;
-			font-style: italic;
-			img{
-				width: 50%;
-				height: 100px;
-			}
-		}
-		.socialMedia{
-			float: right;
-			border: 1px solid #E0E0E0;
-			background-color: #F3F3F3;
-			p{
-				padding: 0em 1em 1em 3em;
-				margin: 0;
-				font-size: 1.6em;
-				&.first{
-					padding-top: 1em;
-				}
-				& a{
-					text-decoration: none;
-				}
-			}
-		}
-	}
-	.mainImage{
-		margin-top: 20px;
-		img{
-			width: 100%;
-			height: 250px;
-		}
-
-	}
-
-	.updates div{
-		display: inline-block;
-		width: 30%;
-	}
-
-	.content{
-		float: left;
-		width: 70%;
-	}
-
-	.foodPhotos{
-		float: right;
-		width: 25%;
+.logo{
+	float: left;
+	font-size: 2em;
+	font-style: italic;
+	img{
+		width: 50%;
+		height: 100px;
 	}
 }
 
+.socialMedia{
+	float: right;
+	border: 1px solid #E0E0E0;
+	background-color: #F3F3F3;
+	p{
+	padding: 0em 1em 1em 3em;
+	margin: 0;
+	font-size: 1.6em;
+	}
+	a{
+		text-decoration: none;
+	}
+}
+
+p.first{
+	margin-top: 1em;
+}
+
+//***************************************Header**********************//
+.mainImage{
+	margin-top: 20px;
+	img{
+		width: 100%;
+		height: 250px;
+	}
+}
+
+<<<<<<< HEAD
 //latest news
 .latestNews
 {
@@ -119,3 +108,49 @@
   color: #E1E3DF;
   width: 92%;
    }
+=======
+//***************************************Updates**********************//
+.updates {
+	max-width: 100%;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.tile{
+	width: 30%;
+	height: 300px;
+	display: inline-block;
+	border: 1px solid black;
+	vertical-align: top;
+	margin-right: 15px;
+	margin-left: 9px;
+	padding: 1em;
+}
+
+.map{
+	margin-right: 0;
+}
+
+.latestNews{
+	margin-left: 0;
+}
+
+
+
+
+//***************************************Story, Content, Etc**********************//
+.content{
+	float: left;
+	width: 70%;
+}
+
+
+
+//***************************************Photos**********************//
+.foodPhotos{
+	float: right;
+	width: 25%;
+}
+
+
+>>>>>>> master
