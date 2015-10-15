@@ -124,6 +124,9 @@ p.first {
   .ourStory img {
     margin-left: 7em; }
 
+.menu .title {
+  font-size: 1.6em; }
+
 .reservations {
   margin-top: 3em; }
   .reservations p {

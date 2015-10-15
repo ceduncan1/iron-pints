@@ -96,6 +96,61 @@ let menuPromise = $.getJSON(menuUrl);
   let doSpecial = function(specials) {
     $('.special').append(todaysSpecial(specials.entrees[0]));
   };
+  
+
+//Function for the click events to show and hide the main story, content, etc ---------------------
+
+$('.storyTab').on('click', function() {
+  $('.ourStory').removeClass('hidden');
+  $('.menu').addClass('hidden');
+  $('.reservations').addClass('hidden');
+
+  $('.storyTab').addClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+});
+
+$('.menuTab').on('click', function() {
+  $('.menu').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.reservations').addClass('hidden');
+  
+  $('.menuTab').addClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+});
+
+$('.resTab').on('click', function() {
+  $('.reservations').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.menu').addClass('hidden');
+  
+  $('.resTab').addClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+
+});
+
+//foodphotos
+
+    $('document').ready(function(){
+      
+      let foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    
+      $.getJSON(foodUrl,
+      {
+        tags: ' bones restaurant',
+        tagmode: 'all',
+        format: 'json'
+      }, function(data){
+        console.log(data);
+        $.each(data.items, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
+          if(i === 4) return false;
+        });
+    });
+  });
  
 
   let menuTemplateApps = function (obj) {
