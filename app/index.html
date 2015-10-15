@@ -9,14 +9,14 @@
 
   <div class="container">
 
-  	<div class="sideBar">
+  <!-- 	<div class="sideBar">
   		<p><a href='#'>Link</a></p>
   		<p><a href='#'>Link</a></p>
   		<p><a href='#'>Link</a></p>
   		<p><a href='#'>Link</a></p>
   		<p><a href='#'>Link</a></p>
   		<p><a href='#'>Link</a></p>
-  	</div>
+  	</div> -->
 
   	<div class="mainContentArea">
 
@@ -45,10 +45,10 @@
   			</div>
         <!-- google map -->
   			<div class="map">
-  				<h3>Our Location</h3>
+  				<h2>Our Location</h2>
   				<hr size=1>
 					<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="375" height="200" src="https://maps.google.com/maps?hl=en&q=115  Martin Luther King Dr.  Atlanta, GA 3&ie=UTF8&t=roadmap&z=15&iwloc=B&output=embed" class="google"></iframe>
-  				<p>115 M.L.K. Jr Dr NW, Atlanta, GA 30303</p>
+  				<h3>115 M.L.K. Jr Dr NW, Atlanta, GA 30303</h3>
   				<ul>
   					<li>P:555-777-9311 &#8226;</li>
   					<li>F:555-867-5309 &#8226;</li>
@@ -97,17 +97,34 @@
   		</div>
 
   		<div class="foodPhotos">
+  			<!-- <img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
-  			<img src="https://www.placecage.com/200/300">
-  			<img src="https://www.placecage.com/200/300">
+  			<img src="https://www.placecage.com/200/300"> -->
   		</div>
   	</div>
 
   </div>
 
+<script>
+  
+  //food dishes
+ var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?';
 
+
+var foodPic = $.getJSON(foodUrl)
+    {
+      tags: 'gourmet dinner'
+      tagmode: 'any',
+      format: 'json',
+    }, function(data){
+        $.each(data.item, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
+          if(1 == 5) return false;
+        });
+    });
+</script>
 
 
 
