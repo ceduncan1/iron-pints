@@ -105,34 +105,13 @@
   			<img src="https://www.placecage.com/200/300"> -->
   		</div>
   	</div>
-
   </div>
-
-<script >
-  $(document).load(function(){
-
-    $()
-
- var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?';
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 
-$.getJSON(foodUrl,
-    {
-      tags: 'gourmet dinner'
-      tagmode: 'any',
-      format: 'json',
-    }, function(data){
-        $.each(data.item, function(i, item){
-          $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
-          if(i == 5) return false;
-        });
-    });
-
-  })
-</script>
-
-
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+ 
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>

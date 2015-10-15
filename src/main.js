@@ -93,6 +93,27 @@ $('.resTab').on('click', function() {
 
 });
 
+//foodphotos
+
+    $('document').ready(function(){
+      
+      let foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    
+      $.getJSON(foodUrl,
+      {
+        tags: ' bones restaurant',
+        tagmode: 'all',
+        format: 'json'
+      }, function(data){
+        console.log(data);
+        $.each(data.items, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
+          if(i === 4) return false;
+        });
+    });
+  });
+
 
 
 

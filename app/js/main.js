@@ -14,7 +14,7 @@
 
   // Templates
   var newsTemplate = function newsTemplate(obj) {
-    var template = '\n    <p>Latest News</p>\n    <div>\n      <p class=\'title\'>' + obj.title + '</p>\n      <p class=\'date\'>' + obj.date_published + '</p>\n    <p>' + obj.post + '</p>\n    </div>';
+    var template = '\n    <h2>Latest News</h2>\n    <hr size1>\n    <div>\n      <h3 class=\'title\'>' + obj.title + '</h3>\n      <p class=\'date\'>' + obj.date_published + '</p>\n    <p>' + obj.post + '</p>\n    </div>';
     return template;
   };
 
@@ -72,5 +72,24 @@
     $('.resTab').addClass('borderFix');
     $('.storyTab').removeClass('borderFix');
     $('.menuTab').removeClass('borderFix');
+  });
+
+  //foodphotos
+
+  $('document').ready(function () {
+
+    var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    $.getJSON(foodUrl, {
+      tags: ' bones restaurant',
+      tagmode: 'all',
+      format: 'json'
+    }, function (data) {
+      console.log(data);
+      $.each(data.items, function (i, item) {
+        $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
+        if (i === 4) return false;
+      });
+    });
   });
 })();
