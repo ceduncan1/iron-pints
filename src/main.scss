@@ -1,3 +1,6 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+
 .container{
 	font-size: 62.5%;
 	background-color: #FFFFFF;
@@ -27,14 +30,15 @@ border-bottom: 1px solid #BBBBBB;
 	border: 1px solid #E0E0E0;
 	background-color: #F3F3F3;
 	p{
-	padding: 0em 1em 1em 3em;
-	margin: 0;
-	font-size: 1.6em;
+		padding: 0em 1em 1em 3em;
+		margin: 0;
+		font-size: 1.6em;
 	}
 	a{
 		text-decoration: none;
 	}
 }
+
 
 p.first{
 	margin-top: 1em;
@@ -165,7 +169,7 @@ p.first{
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
-
+  border-bottom: 1px solid white;
 }
 
 
