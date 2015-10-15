@@ -8,8 +8,10 @@
 <body>
 
   <div class="container">
-    <div class="mainContentArea">
 
+
+
+  	<div class="mainContentArea">
 <!---------------------------Header---------------------------->
   		<div class="header">
   			<div class="logo">
@@ -37,11 +39,20 @@
     			<div class="tile special">
     			</div>
 
-    			<div class="tile map">
-            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.
-              </p> 
-    			</div>
-
+  			</div>
+        <!-- google map -->
+  			<div class="map">
+  				<h2>Our Location</h2>
+  				<hr size=1>
+					<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="375" height="200" src="https://maps.google.com/maps?hl=en&q=115  Martin Luther King Dr.  Atlanta, GA 3&ie=UTF8&t=roadmap&z=15&iwloc=B&output=embed" class="google"></iframe>
+  				<h3>115 M.L.K. Jr Dr NW, Atlanta, GA 30303</h3>
+  				<ul>
+  					<li>P:555-777-9311 &#8226;</li>
+  					<li>F:555-867-5309 &#8226;</li>
+  					<li><a href="https://www.google.com/maps/place/115+M.L.K.+Jr+Dr+NW,+Atlanta,+GA+30303/@33.751733,-84.387233,15z/data=!4m2!3m1!1s0x88f50383e9791113:0x2154ae5455c4548b?hl=en">Map</a> &#8226</li>
+  					<li><a href="https://www.google.com/maps/dir//115+M.L.K.+Jr+Dr+NW,+Atlanta,+GA+30303/@33.7518869,-84.3935872,17z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x88f50383e9791113:0x2154ae5455c4548b!2m2!1d-84.3913985!2d33.7518869!3e0?hl=en">Directions</a></li>
+  				</ul>
+  			</div>
   		</div>
 
 
@@ -87,17 +98,34 @@
 <!---------------------------Photo Bar---------------------------->
 
   		<div class="foodPhotos">
+  			<!-- <img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
   			<img src="https://www.placecage.com/200/300">
-  			<img src="https://www.placecage.com/200/300">
-  			<img src="https://www.placecage.com/200/300">
+  			<img src="https://www.placecage.com/200/300"> -->
   		</div>
   	</div>
 
   </div>
 
+<script>
+  
+  //food dishes
+ var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?';
 
+
+var foodPic = $.getJSON(foodUrl)
+    {
+      tags: 'gourmet dinner'
+      tagmode: 'any',
+      format: 'json',
+    }, function(data){
+        $.each(data.item, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
+          if(1 == 5) return false;
+        });
+    });
+</script>
 
 
 
