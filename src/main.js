@@ -1,5 +1,9 @@
 (function () {
 
+
+//Function for the Current News Below ------------------------------------------------
+
+
   let url = 'https://json-data.herokuapp.com/restaurant/news/1';
 
   //Fetch data and do something with it
@@ -10,10 +14,11 @@
 
   // Templates
   let newsTemplate = function (obj) {
-    let nTemplate = `
-    <p>Latest News</p>
+    let template = `
+    <h2>Latest News</h2>
+    <hr size1>
     <div>
-      <p class='title'>${ obj.title }</p>
+      <h3 class='title'>${ obj.title }</h3>
       <p class='date'>${ obj.date_published }</p>
     <p>${ obj.post }</p>
     </div>`;
@@ -26,6 +31,8 @@
     $('.latestNews').append(newsTemplate(newsItem));
   };
 
+
+//Function for the Specials Tile -----------------------------------------------------
 
 
 let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
@@ -78,9 +85,54 @@ let menuPromise = $.getJSON(menuUrl);
 
   let doMenu = function(obj) {
     $('.menu').append(menuTemplate(obj));
-  }
+  };
 
-// console.log(doSomething);
+//Function for the click events to show and hide the main story, content, etc ---------------------
+
+$('.storyTab').on('click', function() {
+  $('.ourStory').removeClass('hidden');
+  $('.menu').addClass('hidden');
+  $('.reservations').addClass('hidden');
+
+  $('.storyTab').addClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+});
+
+$('.menuTab').on('click', function() {
+  $('.menu').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.reservations').addClass('hidden');
+  
+  $('.menuTab').addClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+});
+
+$('.resTab').on('click', function() {
+  $('.reservations').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.menu').addClass('hidden');
+  
+  $('.resTab').addClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> master
+
 }());
 
 

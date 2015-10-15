@@ -1,11 +1,12 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+
 .container{
 	font-size: 62.5%;
 	background-color: #FFFFFF;
-}
-
-.mainContentArea {
 	margin: 3%;
 }
+
 //***************************************Header**********************//
 .header{
 overflow: hidden;
@@ -27,14 +28,15 @@ border-bottom: 1px solid #BBBBBB;
 	border: 1px solid #E0E0E0;
 	background-color: #F3F3F3;
 	p{
-	padding: 0em 1em 1em 3em;
-	margin: 0;
-	font-size: 1.6em;
+		padding: 0em 1em 1em 3em;
+		margin: 0;
+		font-size: 1.6em;
 	}
 	a{
 		text-decoration: none;
 	}
 }
+
 
 p.first{
 	margin-top: 1em;
@@ -49,6 +51,18 @@ p.first{
 	}
 }
 
+//latest news
+.latestNews
+{
+	border: 1px solid gray;
+  margin-bottom: 59px;
+  font-size: 1.4em;
+  margin-right: 21px;
+}
+
+
+//special
+
 //***************************************Updates**********************//
 .updates {
 	max-width: 100%;
@@ -60,20 +74,60 @@ p.first{
 	width: 30%;
 	height: 300px;
 	display: inline-block;
-	border: 1px solid black;
+	border: 1px solid gray;
 	vertical-align: top;
 	margin-right: 15px;
 	margin-left: 9px;
 	padding: 1em;
+	font-size: 1em;
 }
-
-.map{
-	margin-right: 0;
+.special{
+	border: 1px solid gray;
 }
 
 .latestNews{
 	margin-left: 0;
 }
+
+//Google Map
+.map{
+	margin-right: 0;
+	border: 1px solid gray;
+	h2{
+		padding-left: 32px;
+	}
+	hr{
+		color: #E1E3DF;
+	 	width: 92%;
+	}
+	.google{
+	  	position: relative;
+	  	top: 3px;
+	  	left: 13px;
+	}
+	h3{
+		position: relative;
+		left: 70px;
+	}
+	ul{
+	  	position: relative;
+	  	font-size: 1em;
+	  	list-style: none;
+	  	top: 1px;
+	  	word-spacing: 7px;
+	  	padding-bottom: 13px;
+	}
+	li{
+		display: inline;
+		text-decoration: none;
+		a{
+			text-decoration: none;
+			color: red;
+		}
+	}
+}
+
+
 
 
 
@@ -83,6 +137,33 @@ p.first{
 	float: left;
 	width: 70%;
 }
+
+.tabs{
+	border-bottom: 1px solid black;
+	div{
+		display: inline-block;
+		font-size: 1.6em;
+		margin-right: 20px;
+		padding: 10px;
+	}
+}
+
+.hidden {
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+.borderFix{
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid white;
+}
+
+
+
 
 
 
