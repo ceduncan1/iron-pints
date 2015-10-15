@@ -73,10 +73,14 @@ let menuUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 let menuPromise = $.getJSON(menuUrl);
   menuPromise.then( function (response) {
     doSpecial(response);
+  });
+  menuPromise.then( function (response) {
     doMenu(response);
   });
 
 
+
+// not able to console.log(sTemplate) or (todaysSpecial()) ?
   let todaysSpecial = function (obj) {
     let sTemplate = `
     <p>Todays Special</p>
@@ -85,25 +89,24 @@ let menuPromise = $.getJSON(menuUrl);
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
     return sTemplate;
-    console.log(sTemplate);
   };
 
   let doSpecial = function(specials) {
     $('.special').append(todaysSpecial(specials.entrees[0]));
   };
-  
-  let menuTemplate = function (arr) {
-    // console.log(arr);
-    _.each(arr, function(item){
-      let mTemplate = `
-        <div class='wholeItem'
-          <h3>${ item }</h3>
+ 
+
+  let menuTemplateApps = function (obj) {
+    let retA = '';
+    _.each(obj.appetizers, function(foodObj){
+      retA += `
+        <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ item.item }</span>
-            <span class='itemPrice'>${ item.price }</span>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
-            <span class='itemDesc'>${ item.description }</span>
+            <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
               <div class='allergy'></div>
               <div class='fav'></div>
@@ -111,18 +114,121 @@ let menuPromise = $.getJSON(menuUrl);
               <div class='veg'></div>
             </span>
           </div>
-        </div>`
-      return mTemplate;
+        </div>`;
     });
+    // console.log(appTemplate);
+    // return appTemplate;
+    return retA;
   };
 
-  let doMenu = function(obj) {
-    $('.menu').append(menuTemplate(obj));
+    let menuTemplateEntr = function (obj) {
+    let retE = '';
+    _.each(obj.entrees, function(foodObj){
+      retE += `
+        <div class='wholeItem'>
+          <div class='mItemTop'>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
+          </div>
+          <div class='mItemBottom'>
+            <span class='itemDesc'>${ foodObj.description }</span>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
+          </div>
+        </div>`;
+    });
+    // console.log(appTemplate);
+    // return appTemplate;
+    return retE;
+  };
+
+
+    let menuTemplateSide = function (obj) {
+    let retS = '';
+    _.each(obj.sides, function(foodObj){
+      retS += `
+        <div class='wholeItem'>
+          <div class='mItemTop'>
+            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemPrice'>${ foodObj.price }</span>
+          </div>
+          <div class='mItemBottom'>
+            <span class='itemDesc'>${ foodObj.description }</span>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
+          </div>
+        </div>`;
+    });
+    // console.log(appTemplate);
+    // return appTemplate;
+    return retS;
+  };
+
+
+
+  let doMenu = function(objOfArrays) {
+    $('.appContent').append(menuTemplateApps(objOfArrays));
+    $('.entrContent').append(menuTemplateEntr(objOfArrays));
+    $('.sideContent').append(menuTemplateSide(objOfArrays));
+
+    // console.log(objOfArrays);
   };
 
 
 
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // console.log(buuhhh);
+      // return buuhhh;
+      // console.log(foodObjs);
+      // return foodObjs;
+
+
+      // let mTemplate = `
+      //   <div class='wholeItem'>
+      //     <h3>${ foodTypes }</h3>
+      //     <div class='mItemTop'>
+      //       <span class='itemTitle'>${ foodTypes.item }</span>
+      //       <span class='itemPrice'>${ foodTypes.price }</span>
+      //     </div>
+      //     <div class='mItemBottom'>
+      //       <span class='itemDesc'>${ foodTypes.description }</span>
+      //       <span class='icons'>
+      //         <div class='allergy'></div>
+      //         <div class='fav'></div>
+      //         <div class='spicy'></div>
+      //         <div class='veg'></div>
+      //       </span>
+      //     </div>
+      //   </div>`;
+      // return mTemplate;
+    // console.log(mTemplate);
 
 
 
