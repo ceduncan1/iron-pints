@@ -69,7 +69,7 @@
 
   // not able to console.log(sTemplate) or (todaysSpecial()) ?
   var todaysSpecial = function todaysSpecial(obj) {
-    var sTemplate = '\n    <p>Todays Special</p>\n    <img src="">\n    <p>' + obj.item + '</p>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
+    var sTemplate = '\n    <p>Todays Special</p>\n    <div id="photo"></div>\n    <p>' + obj.item + '</p>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
     return sTemplate;
   };
 
@@ -124,6 +124,24 @@
       $.each(data.items, function (i, item) {
         $('<img/>').attr("src", item.media.m).appendTo('.foodPhotos');
         if (i === 4) return false;
+      });
+    });
+  });
+
+  //Todays special
+  $('document').ready(function () {
+
+    var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    $.getJSON(foodUrl, {
+      tags: ' pork steak',
+      tagmode: 'all',
+      format: 'json'
+    }, function (data) {
+      console.log(data);
+      $.each(data.items, function (i, item) {
+        $('<img/>').attr("src", item.media.m).appendTo('#photo');
+        if (i === 0) return false;
       });
     });
   });
