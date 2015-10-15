@@ -84,7 +84,7 @@ let menuPromise = $.getJSON(menuUrl);
   let todaysSpecial = function (obj) {
     let sTemplate = `
     <p>Todays Special</p>
-    <img src="">
+    <div id="photo"></div>
     <p>${ obj.item }</p>
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
@@ -150,6 +150,25 @@ $('.resTab').on('click', function() {
     });
   });
  
+//Todays special
+ $('document').ready(function(){
+      
+      let foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    
+      $.getJSON(foodUrl,
+      {
+        tags: ' pork steak',
+        tagmode: 'all',
+        format: 'json'
+      }, function(data){
+        console.log(data);
+        $.each(data.items, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('#photo');
+          if(i === 0) return false;
+        });
+    });
+  });
 
   let menuTemplateApps = function (obj) {
     let retA = '';
