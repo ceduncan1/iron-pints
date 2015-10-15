@@ -1,5 +1,9 @@
 (function () {
 
+
+//Function for the Current News Below ------------------------------------------------
+
+
   let url = 'https://json-data.herokuapp.com/restaurant/news/1';
 
   //Fetch data and do something with it
@@ -27,6 +31,8 @@
   };
 
 
+//Function for the Specials Tile -----------------------------------------------------
+
 
 let specialUrl = 'https://json-data.herokuapp.com/restaurant/menu/1';
 
@@ -53,6 +59,42 @@ let specialPromise = $.getJSON(specialUrl);
   };
   
 
+//Function for the click events to show and hide the main story, content, etc ---------------------
 
-// console.log(doSomething);
+$('.storyTab').on('click', function() {
+  $('.ourStory').removeClass('hidden');
+  $('.menu').addClass('hidden');
+  $('.reservations').addClass('hidden');
+
+  $('.storyTab').addClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+});
+
+$('.menuTab').on('click', function() {
+  $('.menu').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.reservations').addClass('hidden');
+  
+  $('.menuTab').addClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+});
+
+$('.resTab').on('click', function() {
+  $('.reservations').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.menu').addClass('hidden');
+  
+  $('.resTab').addClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+
+});
+
+
+
+
+
+
 }());
