@@ -46,7 +46,7 @@
 
   // Templates
   var newsTemplate = function newsTemplate(obj) {
-    var nTemplate = '\n    <h2>Latest News</h2>\n    <hr size1>\n    <div>\n      <h3 class=\'title\'>' + obj.title + '</h3>\n      <p class=\'date\'>' + obj.date_published + '</p>\n    <p>' + obj.post + '</p>\n    </div>';
+    var nTemplate = '\n    <h2>Latest News</h2>\n    <hr>\n    <div>\n      <h3 class=\'title\'>' + obj.title + '</h3>\n      <h3 class=\'date\'>' + obj.date_published + '</h3>\n    <p class="text">' + obj.post + '</p>\n    </div>';
     return nTemplate;
   };
 
@@ -67,9 +67,8 @@
     doMenu(response);
   });
 
-  // not able to console.log(sTemplate) or (todaysSpecial()) ?
   var todaysSpecial = function todaysSpecial(obj) {
-    var sTemplate = '\n    <p>Todays Special</p>\n    <img src="">\n    <p>' + obj.item + '</p>\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
+    var sTemplate = '\n\n    <h2>Todays Special</h2>\n    <hr>\n    <p>Todays Special</p>\n    <div id="photo"></div>\n    <h3>' + obj.item + '</h3>\n\n    <p>' + obj.description + '</p>\n    <p>' + obj.price + '</p>';
     return sTemplate;
   };
 
@@ -109,7 +108,7 @@
     $('.menuTab').removeClass('borderFix');
   });
 
-  //foodphotos
+  //foodphotos ----------------------------------------------------------------
 
   $('document').ready(function () {
 
@@ -128,10 +127,30 @@
     });
   });
 
+  //Todays special
+  $('document').ready(function () {
+
+    var foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+
+    $.getJSON(foodUrl, {
+      tags: ' pork steak',
+      tagmode: 'all',
+      format: 'json'
+    }, function (data) {
+      console.log(data);
+      $.each(data.items, function (i, item) {
+        $('<img/>').attr("src", item.media.m).appendTo('#photo');
+        if (i === 0) return false;
+      });
+    });
+  });
+
+  //Menu Templates -------------------------------------------------------------
+
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';
     _.each(obj.appetizers, function (foodObj) {
-      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + foodObj.item + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n        </div>';
+      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ....................................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
     });
     return retA;
   };
@@ -139,7 +158,7 @@
   var menuTemplateEntr = function menuTemplateEntr(obj) {
     var retE = '';
     _.each(obj.entrees, function (foodObj) {
-      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + foodObj.item + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n        </div>';
+      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ...........................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
     });
     return retE;
   };
@@ -147,7 +166,7 @@
   var menuTemplateSide = function menuTemplateSide(obj) {
     var retS = '';
     _.each(obj.sides, function (foodObj) {
-      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + foodObj.item + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n        </div>';
+      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' .................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
     });
     return retS;
   };

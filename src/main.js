@@ -50,11 +50,12 @@ $('.resTab').on('click', function() {
 
     let nTemplate = `
     <h2>Latest News</h2>
-    <hr size1>
+    <hr>
     <div>
-      <p class='title'>${ obj.title }</p>
-      <p class='date'>${ obj.date_published }</p>
-    <p>${ obj.post }</p>
+
+      <h3 class='title'>${ obj.title }</h3>
+      <h3 class='date'>${ obj.date_published }</h3>
+    <p class="text">${ obj.post }</p>
     </div>`;
     return nTemplate;
   
@@ -80,14 +81,15 @@ let menuPromise = $.getJSON(menuUrl);
     doMenu(response);
   });
 
-
-
-// not able to console.log(sTemplate) or (todaysSpecial()) ?
   let todaysSpecial = function (obj) {
     let sTemplate = `
+
+    <h2>Todays Special</h2>
+    <hr>
     <p>Todays Special</p>
-    <img src="">
-    <p>${ obj.item }</p>
+    <div id="photo"></div>
+    <h3>${ obj.item }</h3>
+
     <p>${ obj.description }</p>
     <p>${ obj.price }</p>`;
     return sTemplate;
@@ -131,7 +133,7 @@ $('.resTab').on('click', function() {
 
 });
 
-//foodphotos
+//foodphotos ----------------------------------------------------------------
 
     $('document').ready(function(){
       
@@ -153,13 +155,35 @@ $('.resTab').on('click', function() {
   });
  
 
+
+//Todays special
+ $('document').ready(function(){
+      
+      let foodUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=cats&jsoncallback=?';
+    
+      $.getJSON(foodUrl,
+      {
+        tags: ' pork steak',
+        tagmode: 'all',
+        format: 'json'
+      }, function(data){
+        console.log(data);
+        $.each(data.items, function(i, item){
+          $('<img/>').attr("src", item.media.m).appendTo('#photo');
+          if(i === 0) return false;
+        });
+    });
+  });
+
+//Menu Templates -------------------------------------------------------------
+
   let menuTemplateApps = function (obj) {
     let retA = '';
     _.each(obj.appetizers, function(foodObj){
       retA += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' ....................................................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -170,6 +194,12 @@ $('.resTab').on('click', function() {
               <div class='spicy'></div>
               <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -182,7 +212,7 @@ $('.resTab').on('click', function() {
       retE += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' ...........................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -193,6 +223,12 @@ $('.resTab').on('click', function() {
               <div class='spicy'></div>
               <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -200,17 +236,14 @@ $('.resTab').on('click', function() {
   };
 
 
-<<<<<<< HEAD
-  let doMenu = function(obj) {
-    $('.menu').append(menuTemplate(obj));
-=======
+
     let menuTemplateSide = function (obj) {
     let retS = '';
     _.each(obj.sides, function(foodObj){
       retS += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item }</span>
+            <span class='itemTitle'>${ foodObj.item + ' .................................................................................'}</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
@@ -222,13 +255,16 @@ $('.resTab').on('click', function() {
               <div class='veg'></div>
             </span>
           </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
+          </div>
         </div>`;
     });
     return retS;
->>>>>>> 1c822c3326b9e9cfaade4ca60f0e59aa8ab61dee
   };
-
-
 
   let doMenu = function(objOfArrays) {
     $('.appContent').append(menuTemplateApps(objOfArrays));
@@ -238,8 +274,5 @@ $('.resTab').on('click', function() {
 
 
 
-<<<<<<< HEAD
 
-=======
 }());
->>>>>>> 1c822c3326b9e9cfaade4ca60f0e59aa8ab61dee

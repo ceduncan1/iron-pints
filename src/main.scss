@@ -40,7 +40,6 @@ border-bottom: 1px solid #BBBBBB;
 	}
 }
 
-
 p.first{
 	margin-top: 1em;
 }
@@ -55,16 +54,34 @@ p.first{
 }
 
 //latest news
-.latestNews
-{
+.latestNews{
 	border: 1px solid gray;
-  margin-bottom: 59px;
-  font-size: 1.4em;
-  margin-right: 21px;
+  	margin-bottom: 59px;
+  	font-size: 1.4em;
+  	margin-right: 21px;
+  	.title{
+  		float: left;
+  	}
+  	.date{
+  		float: right;
+  	}
+  	.text{
+  		float: left;
+  	}
 }
 
 
 //special
+.special{
+	font-size: 1.4em;
+}
+#photo{
+	img{
+		width: 100%;
+		height: 150px;
+	}
+}
+
 
 //***************************************Updates**********************//
 .updates {
@@ -79,7 +96,7 @@ p.first{
 	display: inline-block;
 	border: 1px solid gray;
 	vertical-align: top;
-	margin-right: 15px;
+	margin-right: 13px;
 	margin-left: 9px;
 	padding: 1em;
 	font-size: 1em;
@@ -131,14 +148,10 @@ p.first{
 }
 
 
-
-
-
-
 //***************************************Story, Content, Etc**********************//
 .content{
 	float: left;
-	width: 70%;
+	width: 75%;
 }
 
 .tabs{
@@ -173,12 +186,41 @@ p.first{
 }
 
 .menu{
-	.title{
-		font-size: 1.6em;
+	.dinnerSelection{
+		padding-top: 1em;
+		font-size: 1.8em;
+		font-style: bold;
+		font-style: italic;
+		color: gray;
 	}
+	.title{
+		font-size: 2em;
+		font-style: bold;
+		font-style: italic;
+		padding-top: 20px;
+	}
+	.mItemTop{
+		font-size: 1.6em;
+		padding: 1em 0;
+		font-style: bold;
+		clear: both;
+	}
+	.mItemBottom{
+		font-size: 1.2em;
+		color: gray;
+		float: left;
+	}
+	.icons {
+		// border-left: 1px solid black;
+		i{
+			padding: 5px;
+			float: right;
+			&:hover{
 
+			}
+		}
+	}
 }
-
 .reservations{
 	margin-top: 3em;
 	p{
@@ -227,6 +269,7 @@ p.first{
 .foodPhotos{
 	float: right;
 	width: 25%;
+	margin-right: -56px;
 }
 
 

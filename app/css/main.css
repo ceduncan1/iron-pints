@@ -43,6 +43,19 @@ p.first {
   margin-bottom: 59px;
   font-size: 1.4em;
   margin-right: 21px; }
+  .latestNews .title {
+    float: left; }
+  .latestNews .date {
+    float: right; }
+  .latestNews .text {
+    float: left; }
+
+.special {
+  font-size: 1.4em; }
+
+#photo img {
+  width: 100%;
+  height: 150px; }
 
 .updates {
   max-width: 100%;
@@ -55,7 +68,7 @@ p.first {
   display: inline-block;
   border: 1px solid gray;
   vertical-align: top;
-  margin-right: 15px;
+  margin-right: 13px;
   margin-left: 9px;
   padding: 1em;
   font-size: 1em; }
@@ -97,7 +110,7 @@ p.first {
 
 .content {
   float: left;
-  width: 70%; }
+  width: 75%; }
 
 .tabs {
   border-bottom: 1px solid black; }
@@ -124,8 +137,33 @@ p.first {
   .ourStory img {
     margin-left: 7em; }
 
+.menu .dinnerSelection {
+  padding-top: 1em;
+  font-size: 1.8em;
+  font-style: bold;
+  font-style: italic;
+  color: gray; }
+
 .menu .title {
-  font-size: 1.6em; }
+  font-size: 2em;
+  font-style: bold;
+  font-style: italic;
+  padding-top: 20px; }
+
+.menu .mItemTop {
+  font-size: 1.6em;
+  padding: 1em 0;
+  font-style: bold;
+  clear: both; }
+
+.menu .mItemBottom {
+  font-size: 1.2em;
+  color: gray;
+  float: left; }
+
+.menu .icons i {
+  padding: 5px;
+  float: right; }
 
 .reservations {
   margin-top: 3em; }
@@ -161,4 +199,5 @@ p.first {
 
 .foodPhotos {
   float: right;
-  width: 25%; }
+  width: 25%;
+  margin-right: -56px; }
