@@ -150,7 +150,7 @@
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';
     _.each(obj.appetizers, function (foodObj) {
-      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ....................................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ....................................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n\n          \n        </div>';
     });
     return retA;
   };
@@ -158,7 +158,7 @@
   var menuTemplateEntr = function menuTemplateEntr(obj) {
     var retE = '';
     _.each(obj.entrees, function (foodObj) {
-      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ...........................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ...........................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n      \n        </div>';
     });
     return retE;
   };
@@ -166,7 +166,7 @@
   var menuTemplateSide = function menuTemplateSide(obj) {
     var retS = '';
     _.each(obj.sides, function (foodObj) {
-      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' .................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' .................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          \n        </div>';
     });
     return retS;
   };
@@ -176,4 +176,61 @@
     $('.entrContent').append(menuTemplateEntr(objOfArrays));
     $('.sideContent').append(menuTemplateSide(objOfArrays));
   };
+
+  //Modal boxes-------------------------------------------------------------------------
+  $(function () {
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    $('a#fire').hover(function (e) {
+      $('aside#spice').show();
+    }, function () {
+      $('aside#spice').hide();
+    });
+    $('a#fire').mousemove(function (e) {
+      $("aside#spice").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+    });
+  });
+
+  $(function () {
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    $('a#down').hover(function (e) {
+      $('aside#veg').show();
+    }, function () {
+      $('aside#veg').hide();
+    });
+    $('a#down').mousemove(function (e) {
+      $("aside#veg").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+    });
+  });
+
+  $(function () {
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    $('a#star').hover(function (e) {
+      $('aside#fav').show();
+    }, function () {
+      $('aside#fav').hide();
+    });
+    $('a#star').mousemove(function (e) {
+      $("aside#fav").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+    });
+  });
+
+  $(function () {
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    $('a#circle').hover(function (e) {
+      $('aside#al').show();
+    }, function () {
+      $('aside#al').hide();
+    });
+    $('a#circle').mousemove(function (e) {
+      $("aside#al").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+    });
+  });
 })();
