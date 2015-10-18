@@ -33,6 +33,9 @@ $('.resTab').on('click', function() {
 
 });
 
+//Pop Up info for the menu items
+
+
 
 //Function for the Current News Below ------------------------------------------------
 
@@ -185,18 +188,24 @@ $('.resTab').on('click', function() {
           </div>
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
-            <span class='icons'>
-              <div class='allergy'></div>
-              <div class='fav'></div>
-              <div class='spicy'></div>
-              <div class='veg'></div>
-            </span>
-          </div>
-          <div class="icons">
-            <i class="fa fa-exclamation-circle"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-fire"></i>
-            <i class="fa fa-angle-down"></i>  
+            <div class='icons'>
+              <div class='allergy icon'>
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="popUp"><p>Allergy Schmallergy</p></div>
+              </div>
+              <div class='fav icon'>
+                <i class="fa fa-star"></i>
+                <div class="popUp"><p>This is my favorite</p></div>
+              </div>
+              <div class='spicy icon'>
+                <i class="fa fa-fire"></i>
+                <div class="popUp"><p>I dont do spicy</p></div>
+              </div>
+              <div class='veg icon'>
+                <i class="fa fa-angle-down"></i> 
+                <div class="popUp"><p>Vegan Ipsum</p></div> 
+              </div>
+            </div>
           </div>
         </div>`;
     });
@@ -214,18 +223,24 @@ $('.resTab').on('click', function() {
           </div>
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
-            <span class='icons'>
-              <div class='allergy'></div>
-              <div class='fav'></div>
-              <div class='spicy'></div>
-              <div class='veg'></div>
-            </span>
-          </div>
-          <div class="icons">
-            <i class="fa fa-exclamation-circle"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-fire"></i>
-            <i class="fa fa-angle-down"></i>  
+            <div class='icons'>
+              <div class='allergy icon'>
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='fav icon'>
+                <i class="fa fa-star"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='spicy icon'>
+                <i class="fa fa-fire"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='veg icon'>
+                <i class="fa fa-angle-down"></i>
+                <div class="popUp"></div>  
+              </div>
+            </div>
           </div>
         </div>`;
     });
@@ -242,19 +257,25 @@ $('.resTab').on('click', function() {
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
-            <span class='itemDesc'>${ foodObj.description }</span>
-            <span class='icons'>
-              <div class='allergy'></div>
-              <div class='fav'></div>
-              <div class='spicy'></div>
-              <div class='veg'></div>
-            </span>
-          </div>
-          <div class="icons">
-            <i class="fa fa-exclamation-circle"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-fire"></i>
-            <i class="fa fa-angle-down"></i>  
+            <div class='itemDesc'>${ foodObj.description }</div>
+            <div class='icons'>
+              <div class='allergy icon'>
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='fav icon'>
+                <i class="fa fa-star"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='spicy icon'>
+                <i class="fa fa-fire"></i>
+                <div class="popUp"></div>
+              </div>
+              <div class='veg icon'>
+                <i class="fa fa-angle-down"></i>
+                <div class="popUp"></div>  
+              </div>
+            </div>
           </div>
         </div>`;
     });

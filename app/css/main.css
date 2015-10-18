@@ -157,13 +157,55 @@ p.first {
   clear: both; }
 
 .menu .mItemBottom {
+  clear: overflow;
   font-size: 1.2em;
   color: gray;
-  float: left; }
+  width: 80%; }
 
-.menu .icons i {
-  padding: 5px;
+.menu .icons {
   float: right; }
+  .menu .icons .icon {
+    display: inline-block; }
+  .menu .icons i {
+    float: right;
+    padding: 5px;
+    float: right;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #E4E3E2;
+    margin-right: 5px; }
+
+.popUp {
+  display: none; }
+
+.allergy:hover .popUp {
+  display: block; }
+
+.fav .popUp {
+  display: none; }
+
+.fav:hover .popUp {
+  display: block; }
+
+.spicy .popUp {
+  display: none; }
+
+.spicy:hover .popUp {
+  display: block; }
+
+.veg .popUp {
+  display: none; }
+
+.veg:hover .popUp {
+  display: block; }
+
+.popUp {
+  width: 200px;
+  height: 75px;
+  border: 1px solid black;
+  background-color: #E4E3E2;
+  position: absolute;
+  left: 500px; }
 
 .reservations {
   margin-top: 3em; }
