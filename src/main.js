@@ -188,25 +188,15 @@ $('.resTab').on('click', function() {
           </div>
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
-            <div class='icons'>
-              <div class='allergy icon'>
-                <i class="fa fa-exclamation-circle"></i>
-                <div class="popUp"><p>Allergy Schmallergy</p></div>
-              </div>
-              <div class='fav icon'>
-                <i class="fa fa-star"></i>
-                <div class="popUp"><p>This is my favorite</p></div>
-              </div>
-              <div class='spicy icon'>
-                <i class="fa fa-fire"></i>
-                <div class="popUp"><p>I dont do spicy</p></div>
-              </div>
-              <div class='veg icon'>
-                <i class="fa fa-angle-down"></i> 
-                <div class="popUp"><p>Vegan Ipsum</p></div> 
-              </div>
-            </div>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
           </div>
+
+          
         </div>`;
     });
     return retA;
@@ -223,25 +213,14 @@ $('.resTab').on('click', function() {
           </div>
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
-            <div class='icons'>
-              <div class='allergy icon'>
-                <i class="fa fa-exclamation-circle"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='fav icon'>
-                <i class="fa fa-star"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='spicy icon'>
-                <i class="fa fa-fire"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='veg icon'>
-                <i class="fa fa-angle-down"></i>
-                <div class="popUp"></div>  
-              </div>
-            </div>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
           </div>
+      
         </div>`;
     });
     return retE;
@@ -257,25 +236,13 @@ $('.resTab').on('click', function() {
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
-            <div class='itemDesc'>${ foodObj.description }</div>
-            <div class='icons'>
-              <div class='allergy icon'>
-                <i class="fa fa-exclamation-circle"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='fav icon'>
-                <i class="fa fa-star"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='spicy icon'>
-                <i class="fa fa-fire"></i>
-                <div class="popUp"></div>
-              </div>
-              <div class='veg icon'>
-                <i class="fa fa-angle-down"></i>
-                <div class="popUp"></div>  
-              </div>
-            </div>
+            <span class='itemDesc'>${ foodObj.description }</span>
+            <span class='icons'>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
+            </span>
           </div>
         </div>`;
     });
@@ -288,6 +255,67 @@ $('.resTab').on('click', function() {
     $('.sideContent').append(menuTemplateSide(objOfArrays));
   };
 
+//Modal boxes-------------------------------------------------------------------------
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
 
+  $('a#fire').hover(function(e){
+    $('aside#spice').show()
+  },function() {
+    $('aside#spice').hide();
+  });
+    $('a#fire').mousemove(function(e) {
+    $("aside#spice").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#down').hover(function(e){
+    $('aside#veg').show()
+  },function() {
+    $('aside#veg').hide();
+  });
+    $('a#down').mousemove(function(e) {
+    $("aside#veg").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#star').hover(function(e){
+    $('aside#fav').show()
+  },function() {
+    $('aside#fav').hide();
+  });
+    $('a#star').mousemove(function(e) {
+    $("aside#fav").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#circle').hover(function(e){
+    $('aside#al').show() 
+  },function() {
+    $('aside#al').hide();
+  });
+    $('a#circle').mousemove(function(e) {
+    $("aside#al").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+   
 
 }());

@@ -123,7 +123,7 @@ p.first{
 	.google{
 	  	position: relative;
 	  	top: 3px;
-	  	left: 13px;
+	  	left: 21px;
 	}
 	h3{
 		position: relative;
@@ -211,74 +211,30 @@ p.first{
 		color: gray;
 		width: 80%;
 	}
-	.icons {
-		float: right;
-		.icon{
-			display: inline-block;
-		}
+	.icons{
 		i{
-			float: right;
+			font-size: 7px;
+			border: 1px solid black;
 			padding: 5px;
 			float: right;
-			border: 1px solid black;
-			border-radius: 3px;
-			background-color: #E4E3E2;
-			margin-right: 5px;
 		}
 	}
 }
 
 
-//Pop Up hover effect
-
-.popUp{
-	display: none;
+.fa-angle-down{
+	background-color: yellow;
 }
-
-.allergy:hover .popUp {
-	display: block;
+.fa-fire{
+	background-color: red;
 }
-
-.fav .popUp{
-	display: none;
-}
-
-.fav:hover .popUp {
-	display: block;
-}
-
-.spicy .popUp{
-	display: none;
-}
-
-.spicy:hover .popUp {
-	display: block;
-}
-
-.veg .popUp{
-	display: none;
-}
-
-.veg:hover .popUp {
-	display: block;
-}
-
-.popUp{
-	width: 200px;
-	height: 75px;
-	border: 1px solid black;
-	background-color: #E4E3E2;
-	position: absolute;
-	left: 500px;
-}
-
-
-
-
-
-
-
-
+.fa-star{
+	background-color: #C9DEF0;
+ }
+.fa-exclamation-circle{
+	background-color: #8ACB55;
+ }
+ 
 .reservations{
 	margin-top: 3em;
 	p{
@@ -329,5 +285,201 @@ p.first{
 	width: 25%;
 	margin-right: -56px;
 }
+//*****************************AppIcons********************************//
+.icons {
+	position: relative;
+	left: 0px;
+	top: 35px;
+}
+
+.icons1{
+	position: relative;
+  left: 68px;
+  top: 113.9px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.icons2{
+	position: relative;
+  left: 137.7px;
+  top: 191px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.icons3{
+	position: relative;
+  left: 206.7px;
+  top: 268px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+//************************EntreeIcons***********************************//
+
+.en1{
+	position: relative;
+  left: -9px;
+  top: 32px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.en2{
+	position: relative;
+  left: 61px;
+  top: 97px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.en3{
+	position: relative;
+  left: 133px;
+  top: 162px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.en4{
+	position: relative;
+  left: 202px;
+  top: 228.9px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+//*****************************SidesIcons****************************//
+.S1{
+	position: relative;
+  left: -12px;
+  top: 35px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.S2{
+	position: relative;
+  left: 58px;
+  top: 78.9px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.S3{
+	position: relative;
+  left: 130px;
+  top: 128.9px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+.S4{
+	position: relative;
+  left: 199px;
+  top: 183.9px;
+	i {
+		font-size: 7px;
+		border: 1px solid black;
+		padding: 5px;
+		float: right;
+	}
+}
+
+//****************************ModalWindows************************//
+
+#al{
+	color: white;
+	position: absolute;
+	float: right;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 238px;
+	height:  86px;
+	background-color: green;
+  display: none;
+}
+
+#veg{
+	color: black;
+	position: absolute;
+	float: right;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 238px;
+	height:  86px;
+	background-color: yellow;
+	display: none;
+	z-index: 5;
+}
+	
+
+#fav{
+	color: black;
+	position: absolute;
+	float: right;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 238px;
+	height:  86px;
+	background-color: #C9DEF0;	
+	display: none;	
+}
+
+#spice{
+	color: white;
+	position: absolute;
+	float: right;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 238px;
+	height:  86px;
+	background-color: red;
+	display: none;	
+}
+
+
+
+
 
 
