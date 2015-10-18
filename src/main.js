@@ -33,6 +33,9 @@ $('.resTab').on('click', function() {
 
 });
 
+//Pop Up info for the menu items
+
+
 
 //Function for the Current News Below ------------------------------------------------
 
@@ -241,7 +244,6 @@ $('.resTab').on('click', function() {
               <div class='veg'></div>
             </span>
           </div>
-          
         </div>`;
     });
     return retS;

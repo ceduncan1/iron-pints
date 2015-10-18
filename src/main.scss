@@ -206,9 +206,10 @@ p.first{
 		clear: both;
 	}
 	.mItemBottom{
+		clear: overflow;
 		font-size: 1.2em;
 		color: gray;
-		float: left;
+		width: 80%;
 	}
 	.icons{
 		i{
@@ -219,6 +220,7 @@ p.first{
 		}
 	}
 }
+
 
 .fa-angle-down{
 	background-color: yellow;
@@ -232,9 +234,7 @@ p.first{
 .fa-exclamation-circle{
 	background-color: #8ACB55;
  }
- .fa-exclamation-circle:hover #al{
-			display: block !important;
-		}
+ 
 .reservations{
 	margin-top: 3em;
 	p{

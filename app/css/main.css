@@ -157,9 +157,10 @@ p.first {
   clear: both; }
 
 .menu .mItemBottom {
+  clear: overflow;
   font-size: 1.2em;
   color: gray;
-  float: left; }
+  width: 80%; }
 
 .menu .icons i {
   font-size: 7px;
@@ -178,9 +179,6 @@ p.first {
 
 .fa-exclamation-circle {
   background-color: #8ACB55; }
-
-.fa-exclamation-circle:hover #al {
-  display: block !important; }
 
 .reservations {
   margin-top: 3em; }
