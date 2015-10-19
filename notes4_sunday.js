@@ -180,16 +180,25 @@ $('.resTab').on('click', function() {
       retA += `
         <div class='wholeItem'>
           <div class='mItemTop'>
-            <span class='itemTitle'>${ foodObj.item + ' ....................................................................................................'}</span>
+            <span class='itemTitle'>${ foodObj.item }....................................................................................................</span>
             <span class='itemPrice'>${ foodObj.price }</span>
           </div>
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
-            <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+            <span class='icons'>`;
+      if ( '${ foodObj.allergies }' === 1) {
+        retA += `<i class="fa fa-exclamation-circle"></i>`;
+      };
+      if ( '${ foodObj.favorites }' === 1) {
+        retA += `<i class="fa fa-star"></i>`;
+      };
+      if ( '${ foodObj.spicy }' === 1) {
+        retA += `<i class="fa fa-fire"></i>`;
+      };
+      if ( '${ foodObj.vegan }' === 1) {
+        retA += `<i class="fa fa-angle-down"></i>`;
+      };
+      retA += `
             </span>
           </div>
         </div>`;

@@ -186,11 +186,17 @@ $('.resTab').on('click', function() {
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -209,11 +215,17 @@ $('.resTab').on('click', function() {
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -232,10 +244,18 @@ $('.resTab').on('click', function() {
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class="icon" id='allergy'>
+                <i class="fa fa-exclamation-circle"></i>
+              </div>
+              <div class="icon" id='fav'>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="icon" id='spicy'>
+                <i class="fa fa-fire"></i>
+              </div>
+              <div class="icon" id='veg'>
+                <i class="fa fa-angle-down"></i>
+              </div>
             </span>
           </div>
         </div>`;

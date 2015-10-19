@@ -252,3 +252,21 @@ $('.resTab').on('click', function() {
 
 
 }());
+
+
+
+
+
+if (foodObj.allergy === 1) {
+  addClass()
+}
+
+
+
+
+
+
+
+
+
+

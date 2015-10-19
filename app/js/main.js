@@ -150,7 +150,20 @@
   var menuTemplateApps = function menuTemplateApps(obj) {
     var retA = '';
     _.each(obj.appetizers, function (foodObj) {
-      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ....................................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retA += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + foodObj.item + '....................................................................................................</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>';
+      if ('${ foodObj.allergies }' === 1) {
+        retA += '<i class="fa fa-exclamation-circle"></i>';
+      };
+      if ('${ foodObj.favorites }' === 1) {
+        retA += '<i class="fa fa-star"></i>';
+      };
+      if ('${ foodObj.spicy }' === 1) {
+        retA += '<i class="fa fa-fire"></i>';
+      };
+      if ('${ foodObj.vegan }' === 1) {
+        retA += '<i class="fa fa-angle-down"></i>';
+      };
+      retA += '\n            </span>\n          </div>\n        </div>';
     });
     return retA;
   };
@@ -158,7 +171,7 @@
   var menuTemplateEntr = function menuTemplateEntr(obj) {
     var retE = '';
     _.each(obj.entrees, function (foodObj) {
-      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ...........................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retE += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' ...........................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <i class="fa fa-exclamation-circle"></i>\n              <i class="fa fa-star"></i>\n              <i class="fa fa-fire"></i>\n              <i class="fa fa-angle-down"></i>\n            </span>\n          </div>\n        </div>';
     });
     return retE;
   };
@@ -166,7 +179,7 @@
   var menuTemplateSide = function menuTemplateSide(obj) {
     var retS = '';
     _.each(obj.sides, function (foodObj) {
-      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' .................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <div class=\'allergy\'></div>\n              <div class=\'fav\'></div>\n              <div class=\'spicy\'></div>\n              <div class=\'veg\'></div>\n            </span>\n          </div>\n          <div class="icons">\n            <i class="fa fa-exclamation-circle"></i>\n            <i class="fa fa-star"></i>\n            <i class="fa fa-fire"></i>\n            <i class="fa fa-angle-down"></i>  \n          </div>\n        </div>';
+      retS += '\n        <div class=\'wholeItem\'>\n          <div class=\'mItemTop\'>\n            <span class=\'itemTitle\'>' + (foodObj.item + ' .................................................................................') + '</span>\n            <span class=\'itemPrice\'>' + foodObj.price + '</span>\n          </div>\n          <div class=\'mItemBottom\'>\n            <span class=\'itemDesc\'>' + foodObj.description + '</span>\n            <span class=\'icons\'>\n              <i class="fa fa-exclamation-circle"></i>\n              <i class="fa fa-star"></i>\n              <i class="fa fa-fire"></i>\n              <i class="fa fa-angle-down"></i>\n            </span>\n          </div>\n        </div>';
     });
     return retS;
   };
