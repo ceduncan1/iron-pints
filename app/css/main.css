@@ -90,7 +90,7 @@ p.first {
   .map .google {
     position: relative;
     top: 3px;
-    left: 13px; }
+    left: 21px; }
   .map h3 {
     position: relative;
     left: 70px; }
@@ -157,13 +157,28 @@ p.first {
   clear: both; }
 
 .menu .mItemBottom {
+  clear: overflow;
   font-size: 1.2em;
   color: gray;
-  float: left; }
+  width: 80%; }
 
 .menu .icons i {
+  font-size: 7px;
+  border: 1px solid black;
   padding: 5px;
   float: right; }
+
+.fa-angle-down {
+  background-color: yellow; }
+
+.fa-fire {
+  background-color: red; }
+
+.fa-star {
+  background-color: #C9DEF0; }
+
+.fa-exclamation-circle {
+  background-color: #8ACB55; }
 
 .reservations {
   margin-top: 3em; }
@@ -201,3 +216,163 @@ p.first {
   float: right;
   width: 25%;
   margin-right: -56px; }
+
+.icons {
+  position: relative;
+  left: 0px;
+  top: 35px; }
+
+.icons1 {
+  position: relative;
+  left: 68px;
+  top: 113.9px; }
+  .icons1 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.icons2 {
+  position: relative;
+  left: 139px;
+  top: 217px; }
+  .icons2 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.icons3 {
+  position: relative;
+  left: 206.7px;
+  top: 298px; }
+  .icons3 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.en1 {
+  position: relative;
+  left: -9px;
+  top: 32px; }
+  .en1 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.en2 {
+  position: relative;
+  left: 61px;
+  top: 97px; }
+  .en2 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.en3 {
+  position: relative;
+  left: 133px;
+  top: 162px; }
+  .en3 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.en4 {
+  position: relative;
+  left: 202px;
+  top: 228.9px; }
+  .en4 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.S1 {
+  position: relative;
+  left: -12px;
+  top: 35px; }
+  .S1 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.S2 {
+  position: relative;
+  left: 58px;
+  top: 78.9px; }
+  .S2 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.S3 {
+  position: relative;
+  left: 130px;
+  top: 128.9px; }
+  .S3 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+.S4 {
+  position: relative;
+  left: 199px;
+  top: 183.9px; }
+  .S4 i {
+    font-size: 7px;
+    border: 1px solid black;
+    padding: 5px;
+    float: right; }
+
+#al {
+  color: white;
+  position: absolute;
+  float: right;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 238px;
+  height: 86px;
+  background-color: green;
+  display: none; }
+
+#veg {
+  color: black;
+  position: absolute;
+  float: right;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 238px;
+  height: 86px;
+  background-color: yellow;
+  display: none;
+  z-index: 5; }
+
+#fav {
+  color: black;
+  position: absolute;
+  float: right;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 238px;
+  height: 86px;
+  background-color: #C9DEF0;
+  display: none; }
+
+#spice {
+  color: white;
+  position: absolute;
+  float: right;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 238px;
+  height: 86px;
+  background-color: red;
+  display: none; }

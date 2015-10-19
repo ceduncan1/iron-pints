@@ -33,6 +33,9 @@ $('.resTab').on('click', function() {
 
 });
 
+//Pop Up info for the menu items
+
+
 
 //Function for the Current News Below ------------------------------------------------
 
@@ -47,10 +50,12 @@ $('.resTab').on('click', function() {
 
   // Templates
   let newsTemplate = function (obj) {
+
     let nTemplate = `
     <h2>Latest News</h2>
     <hr>
     <div>
+
       <h3 class='title'>${ obj.title }</h3>
       <h3 class='date'>${ obj.date_published }</h3>
     <p class="text">${ obj.post }</p>
@@ -58,6 +63,7 @@ $('.resTab').on('click', function() {
     return nTemplate;
   
   };
+
 
   let doNews = function(newsItem) {
     // console.log(arr);
@@ -220,6 +226,8 @@ $('.resTab').on('click', function() {
     return retE;
   };
 
+
+
     let menuTemplateSide = function (obj) {
     let retS = '';
     _.each(obj.sides, function(foodObj){
@@ -249,6 +257,68 @@ $('.resTab').on('click', function() {
     $('.sideContent').append(menuTemplateSide(objOfArrays));
   };
 
+//Modal boxes-------------------------------------------------------------------------
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#fire').hover(function(e){
+    $('aside#spice').show()
+  },function() {
+    $('aside#spice').hide();
+  });
+    $('a#fire').mousemove(function(e) {
+    $("aside#spice").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#down').hover(function(e){
+    $('aside#veg').show()
+  },function() {
+    $('aside#veg').hide();
+  });
+    $('a#down').mousemove(function(e) {
+    $("aside#veg").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#star').hover(function(e){
+    $('aside#fav').show()
+  },function() {
+    $('aside#fav').hide();
+  });
+    $('a#star').mousemove(function(e) {
+    $("aside#fav").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+$(function(){
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('a#circle').hover(function(e){
+    $('aside#al').show() 
+  },function() {
+    $('aside#al').hide();
+  });
+    $('a#circle').mousemove(function(e) {
+    $("aside#al").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+
+   
 
 
 }());
