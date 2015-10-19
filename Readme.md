@@ -8,15 +8,18 @@
 * Kool Havis - https://github.com/havisk
 * Sarah Besozzi - https://github.com/sbesozzi
 
+
 > We used three API's to create this site
 
 * Flickr's Photo API
 * Google Maps Embed API
 * Custom Restaurant API Endpoint
 
+
 > Disclaimer
 
 * This project is fictional. There is no real client. Any similarity is purely a coincidence.
+
 
 > Other Resources
 
