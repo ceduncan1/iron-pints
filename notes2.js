@@ -33,9 +33,6 @@ $('.resTab').on('click', function() {
 
 });
 
-//Pop Up info for the menu items
-
-
 
 //Function for the Current News Below ------------------------------------------------
 
@@ -50,12 +47,10 @@ $('.resTab').on('click', function() {
 
   // Templates
   let newsTemplate = function (obj) {
-
     let nTemplate = `
     <h2>Latest News</h2>
     <hr>
     <div>
-
       <h3 class='title'>${ obj.title }</h3>
       <h3 class='date'>${ obj.date_published }</h3>
     <p class="text">${ obj.post }</p>
@@ -63,7 +58,6 @@ $('.resTab').on('click', function() {
     return nTemplate;
   
   };
-
 
   let doNews = function(newsItem) {
     // console.log(arr);
@@ -103,6 +97,38 @@ let menuPromise = $.getJSON(menuUrl);
   };
   
 
+//Function for the click events to show and hide the main story, content, etc ---------------------
+
+$('.storyTab').on('click', function() {
+  $('.ourStory').removeClass('hidden');
+  $('.menu').addClass('hidden');
+  $('.reservations').addClass('hidden');
+
+  $('.storyTab').addClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+});
+
+$('.menuTab').on('click', function() {
+  $('.menu').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.reservations').addClass('hidden');
+  
+  $('.menuTab').addClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+});
+
+$('.resTab').on('click', function() {
+  $('.reservations').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.menu').addClass('hidden');
+  
+  $('.resTab').addClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+
+});
 
 //foodphotos ----------------------------------------------------------------
 
@@ -160,11 +186,17 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
@@ -183,18 +215,22 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
+          </div>
+          <div class="icons">
+            <i class="fa fa-exclamation-circle"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-fire"></i>
+            <i class="fa fa-angle-down"></i>  
           </div>
         </div>`;
     });
     return retE;
   };
-
-
 
     let menuTemplateSide = function (obj) {
     let retS = '';
@@ -208,10 +244,18 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class="icon" id='allergy'>
+                <i class="fa fa-exclamation-circle"></i>
+              </div>
+              <div class="icon" id='fav'>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="icon" id='spicy'>
+                <i class="fa fa-fire"></i>
+              </div>
+              <div class="icon" id='veg'>
+                <i class="fa fa-angle-down"></i>
+              </div>
             </span>
           </div>
         </div>`;
@@ -225,68 +269,6 @@ let menuPromise = $.getJSON(menuUrl);
     $('.sideContent').append(menuTemplateSide(objOfArrays));
   };
 
-//Modal boxes-------------------------------------------------------------------------
-$(function(){
-  var moveLeft = 20;
-  var moveDown = 10;
-
-  $('a#fire').hover(function(e){
-    $('aside#spice').show()
-  },function() {
-    $('aside#spice').hide();
-  });
-    $('a#fire').mousemove(function(e) {
-    $("aside#spice").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-  });
-
-});
-
-$(function(){
-  var moveLeft = 20;
-  var moveDown = 10;
-
-  $('a#down').hover(function(e){
-    $('aside#veg').show()
-  },function() {
-    $('aside#veg').hide();
-  });
-    $('a#down').mousemove(function(e) {
-    $("aside#veg").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-  });
-
-});
-
-$(function(){
-  var moveLeft = 20;
-  var moveDown = 10;
-
-  $('a#star').hover(function(e){
-    $('aside#fav').show()
-  },function() {
-    $('aside#fav').hide();
-  });
-    $('a#star').mousemove(function(e) {
-    $("aside#fav").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-  });
-
-});
-
-$(function(){
-  var moveLeft = 20;
-  var moveDown = 10;
-
-  $('a#circle').hover(function(e){
-    $('aside#al').show() 
-  },function() {
-    $('aside#al').hide();
-  });
-    $('a#circle').mousemove(function(e) {
-    $("aside#al").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-  });
-
-});
-
-   
 
 
 }());
