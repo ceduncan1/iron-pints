@@ -1,3 +1,4 @@
+
 (function () {
 
 //Function for the click events to show and hide the main story, content, etc ---------------------
@@ -103,6 +104,38 @@ let menuPromise = $.getJSON(menuUrl);
   };
   
 
+//Function for the click events to show and hide the main story, content, etc ---------------------
+
+$('.storyTab').on('click', function() {
+  $('.ourStory').removeClass('hidden');
+  $('.menu').addClass('hidden');
+  $('.reservations').addClass('hidden');
+
+  $('.storyTab').addClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+});
+
+$('.menuTab').on('click', function() {
+  $('.menu').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.reservations').addClass('hidden');
+  
+  $('.menuTab').addClass('borderFix');
+  $('.resTab').removeClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+});
+
+$('.resTab').on('click', function() {
+  $('.reservations').removeClass('hidden');
+  $('.ourStory').addClass('hidden');
+  $('.menu').addClass('hidden');
+  
+  $('.resTab').addClass('borderFix');
+  $('.storyTab').removeClass('borderFix');
+  $('.menuTab').removeClass('borderFix');
+
+});
 
 //foodphotos ----------------------------------------------------------------
 
@@ -160,12 +193,14 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
           </div>
+
+          
         </div>`;
     });
     return retA;
@@ -183,12 +218,13 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
           </div>
+      
         </div>`;
     });
     return retE;
@@ -208,10 +244,10 @@ let menuPromise = $.getJSON(menuUrl);
           <div class='mItemBottom'>
             <span class='itemDesc'>${ foodObj.description }</span>
             <span class='icons'>
-              <i class="fa fa-exclamation-circle"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-fire"></i>
-              <i class="fa fa-angle-down"></i>
+              <div class='allergy'></div>
+              <div class='fav'></div>
+              <div class='spicy'></div>
+              <div class='veg'></div>
             </span>
           </div>
         </div>`;
